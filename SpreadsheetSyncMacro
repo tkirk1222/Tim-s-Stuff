@@ -1,0 +1,23 @@
+Sub SetWindow1()
+
+Dim rng As Range
+Dim rcell As Range
+Dim ws As Worksheet
+Dim yRow As Integer
+Dim xClmn As Integer
+Dim ZSheet As String
+
+Set rng = Selection
+
+ZSheet = Application.ActiveSheet.Name
+yRow = rng.Row
+xClmn = rng.Column
+
+For Each ws In Worksheets
+    ws.Select
+    Range("BM200").Select
+    Cells(yRow, xClmn).Select
+Next ws
+Worksheets(ZSheet).Activate
+
+End Sub
